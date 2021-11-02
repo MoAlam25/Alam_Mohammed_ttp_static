@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8" />
+  
+    <title>"My Name and Favorite Hobby Deployed Static Web Page"</title>
+  
+    <style>
+        #clock {
+            font-size: 100px;
+            margin: 250px;
+            text-align: center;
+            }
+           
+
+    </style>
+</head>
+   <!-- changes background color to black and prints name hobbies -->
+<body style ="background-color:black;">
+    <font color = "white";>
+	<h1> My name is Mohammed Alam and my hobbies include playing chess and working out. The current time is: <div id="clock">6:35:10</div> </h1>
+    
+    <script>
+        setInterval(time, 1000);
+        function time() {
+            let time = new Date();
+            let hour = time.getHours();
+            let min = time.getMinutes();
+            let sec = time.getSeconds();
+            am_pm = "AM";
+                
+                //if hour is greater than or equal to 12, print PM
+                if (hour > 12) {
+                hour -= 12;
+                am_pm = "PM";
+                }
+                //if hour is equal to 0 print AM
+                if (hour == 0) {
+                hr = 12;
+                am_pm = "AM";
+            }
+            //sets layout of digital clock
+  
+            hour = hour < 10 ? "0" + hour : hour;
+            min = min < 10 ? "0" + min : min;
+            sec = sec < 10 ? "0" + sec : sec;
+  
+            let currentTime = hour + ":" 
+                + min + ":" + sec + am_pm;
+
+
+            // returns element object
+            document.getElementById("clock")
+                .innerHTML = currentTime;
+        }
+  
+        time();
+    </script>
+</body>
+  
+</html>
+
